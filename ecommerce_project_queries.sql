@@ -640,6 +640,14 @@ group by Category
 order by Revenue desc limit 1;
 
 
+-- revenue by cateogry
+
+SELECT Category,
+       SUM(Quantity * Price) AS Revenue
+FROM orders
+GROUP BY Category
+ORDER BY Revenue DESC;
+
 -- What is the average order price per category?
  SELECT Category, AVG(Quantity * Price) AS AvgOrderPrice FROM Orders
 GROUP BY Category;
