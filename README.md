@@ -1,13 +1,13 @@
-# E-Commerce Sales Analysis using SQL
+#  E-Commerce Sales Analysis using SQL
 
-## Project Overview
+##  Project Overview
 This project demonstrates SQL-based analysis of an E-Commerce sales dataset. The database contains order information including customers, products, categories, prices, quantities, order dates, and countries.
 
 The goal of this project is to perform business analysis using SQL queries and extract meaningful insights from sales data.
 
 ---
 
-## Database Structure
+##  Database Structure
 
 ### Table: Orders
 
@@ -24,49 +24,65 @@ The goal of this project is to perform business analysis using SQL queries and e
 
 ---
 
-## Technologies Used
-
-- MySQL
+##  Technologies Used
+- MySQL Workbench
 - SQL
 - Relational Database Concepts
+- GitHub
 
 ---
 
-## Business Questions Solved
+##  Business Questions Solved
 
-### Product Analysis
+###  Product Analysis
 - Top 5 best-selling products by quantity sold
 - Top 5 revenue-generating products
 
-### Customer Analysis
+**Result:**
+![Top 5 Revenue Products](top5_revenue_products.png)
+
+###  Customer Analysis
 - Customer with the highest number of orders
 - Top 5 most active customers
 - Customer who spent the most money overall
 - Customers who ordered more than 3 times
 
-### Revenue Analysis
+###  Revenue Analysis
 - Total revenue generated
 - Monthly revenue trend for 2023
+
+**Result:**
+![Monthly Revenue Trend](monthly_revenue.png)
+
 - Country generating the highest revenue
 - Category generating the highest revenue
 
-### Category Analysis
+**Result:**
+![Revenue by Category](revenue_by_category.png)
+
+###  Category Analysis
 - Number of orders in each category
 - Average order value per category
 
 ---
 
-## Sample Queries
+##  Key Insights
+- **Electronics** is the highest revenue-generating category with ₹62,40,090.
+- **Canon DSLR Camera** is the top revenue-generating product.
+- **October** had the highest monthly revenue in 2023.
+- **India** is the primary market across all orders.
+
+---
+
+##  Sample Queries
 
 ### Total Revenue
-
 ```sql
 SELECT SUM(Quantity * Price) AS Total_Revenue
 FROM Orders;
 ```
 
-### Top Revenue Generating Product
-
+### Top 5 Revenue Generating Products
 ```sql
 SELECT ProductName,
        SUM(Quantity * Price) AS Total_Revenue
@@ -77,7 +93,6 @@ LIMIT 5;
 ```
 
 ### Monthly Revenue Trend
-
 ```sql
 SELECT MONTH(OrderDate) AS MonthNo,
        SUM(Quantity * Price) AS Revenue
@@ -89,28 +104,19 @@ ORDER BY MonthNo;
 
 ---
 
-## Key SQL Concepts Used
-
-- SELECT
-- WHERE
-- GROUP BY
-- ORDER BY
+##  Key SQL Concepts Used
+- SELECT, WHERE, GROUP BY, ORDER BY
 - HAVING
-- Aggregate Functions
-  - SUM()
-  - COUNT()
-  - AVG()
-  - MAX()
+- Aggregate Functions — SUM(), COUNT(), AVG(), MAX()
 - LIMIT
+- Date Functions — MONTH(), YEAR()
 
 ---
 
-## Learning Outcomes
-
+##  Learning Outcomes
 By completing this project, I practiced:
-
 - Data aggregation and reporting
-- Revenue analysis
+- Revenue and sales trend analysis
 - Customer behavior analysis
 - Product performance analysis
 - Business intelligence using SQL
@@ -118,10 +124,6 @@ By completing this project, I practiced:
 
 ---
 
-## Project Author
-
+##  Project Author
 **Ishika Sharma**
-
 BCA Student | Data Analytics & SQL Enthusiast
-
----
